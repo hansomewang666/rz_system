@@ -1,0 +1,37 @@
+// 定义变量,在less当中@,例如@width: 10px;
+// 导入文件
+@import './var.scss';
+// 全局变量
+$nav-color: #F90;
+
+#app {
+    background-color:  $highlight-color;
+    border: $basic-border
+}   
+
+nav {
+    // 局部变量
+    $width: 100px;
+    width: $width;
+    color: $nav-color;
+    background-color: black
+}
+//嵌套写法
+#content {
+    article {
+      h1 { color: #1dc08a }
+      p {  font-style: italic; }
+      a {
+        color: blue;
+        //&父选择器,取消父选择符和当前选择符中间空格
+        &:hover {
+            color: red;
+        }
+      }
+    //   a:hover {
+    //     color: red;
+    //   }
+      
+    }
+    aside { background-color: #f90 }
+}
